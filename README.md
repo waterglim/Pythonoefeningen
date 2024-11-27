@@ -1,11 +1,11 @@
 # Python oefeningen
 Deze repository bevat verschillende oefeningen van python.
 
-## Aanpassen
-Nog niet alle oefeningen zijn optimaal of werkend, pas deze gerust aan tot ze werken.
+## Doel
+Het doel is om alle oefeningen te optimaliseren en te laten werken.
 
 ## Versie
-1.0
+1.1
 
 
 
