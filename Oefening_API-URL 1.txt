@@ -1,0 +1,7 @@
+https://dog.ceo/api/breeds/image/random
+
+https://dog.ceo/api/breed/puggle/images/random
+https://dog.ceo/api/breed/puggle/images/random
+https://dog.ceo/api/breed/puggle/images/random
+https://dog.ceo/api/breed/puggle/images/random
+https://dog.ceo/api/breed/puggle/images/random
