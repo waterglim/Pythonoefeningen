@@ -1,0 +1,3 @@
+https://restcountries.com/v3.1/currency/euro?fields=name
+
+https://restcountries.com/v3.1/name/switzerland?fields=population
