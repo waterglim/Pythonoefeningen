@@ -47,22 +47,59 @@ response = requests.get(api_url)
     ### Aantal herstelde patienten
 
 
-barecovidurl = "https://disease.sh/v3/covid-19/countries"
+#barecovidurl = "https://disease.sh/v3/covid-19/countries"
 
-newinput = input("Geef een land in aub (engelse naamgeving) : \n")
-land = str(newinput)
+#newinput = input("Geef een land in aub (engelse naamgeving) : \n")
+#land = str(newinput)
 
-covidurl = barecovidurl + "/" + newinput
-covidresponse =  requests.get(covidurl)
-covidinfo = covidresponse.json()
+#covidurl = barecovidurl + "/" + newinput
+#covidresponse =  requests.get(covidurl)
+#covidinfo = covidresponse.json()
 
-cases = "{:,.2f}".format(covidinfo["cases"])
-deaths = "{:,.2f}".format(covidinfo["deaths"])
-recovered = "{:,.2f}".format(covidinfo["recovered"])
+#cases = "{:,.2f}".format(covidinfo["cases"])
+#deaths = "{:,.2f}".format(covidinfo["deaths"])
+#recovered = "{:,.2f}".format(covidinfo["recovered"])
 
-print("Cases reported in " + land + " : " + str(cases))
-print("Deaths reported in " + land + " : " + str(deaths))
-print("Recovered patients reported in " + land + " : " + str(recovered))
+#print("Cases reported in " + land + " : " + str(cases))
+#print("Deaths reported in " + land + " : " + str(deaths))
+#print("Recovered patients reported in " + land + " : " + str(recovered))
+
+
+
+
+### Doel : Haal een  mop op via API en toon deze.
+### zoek een API die willekeurig moppen levert (bijv. jokeapi)
+### maak een script dat een mop ophaalt en weergeeft
+### Voeg een loop toe zodat de gebruiker meerdere moppen kan ophalen.
+
+
+amountofjokes = input("Hoeveel moppen wil je zien? \n")
+x = 0
+
+while int(amountofjokes) > x:
+    jokesurl = "https://v2.jokeapi.dev/joke/Any" 
+    jokes = requests.get(jokesurl)
+    jokes = jokes.json()
+
+    try: 
+        setup = jokes["setup"]
+    except: 
+        setup = ""
+
+    try:
+        delivery = jokes["delivery"]
+    except:
+        delivery = ""
+        4
+    print(setup +"\n" + delivery +"\n")
+    x+=1
+
+
+
+
+
+
+
 
 
 
