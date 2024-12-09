@@ -73,27 +73,68 @@ response = requests.get(api_url)
 ### Voeg een loop toe zodat de gebruiker meerdere moppen kan ophalen.
 
 
-amountofjokes = input("Hoeveel moppen wil je zien? \n")
-x = 0
+#amountofjokes = input("Hoeveel moppen wil je zien? \n")
+#x = 0
 
-while int(amountofjokes) > x:
-    jokesurl = "https://v2.jokeapi.dev/joke/Any" 
-    jokes = requests.get(jokesurl)
-    jokes = jokes.json()
+#while int(amountofjokes) > x:
+#    jokesurl = "https://v2.jokeapi.dev/joke/Any" 
+#    jokes = requests.get(jokesurl)
+#    jokes = jokes.json()
 
-    try: 
-        setup = jokes["setup"]
-    except: 
-        setup = ""
+#    try: 
+#        setup = jokes["setup"]
+#    except: 
+#        setup = ""
 
-    try:
-        delivery = jokes["delivery"]
-    except:
-        delivery = ""
-        4
-    print(setup +"\n" + delivery +"\n")
-    x+=1
+#    try:
+#        delivery = jokes["delivery"]
+#    except:
+#        delivery = ""
+#        
+#    print(setup +"\n" + delivery +"\n")
+#    x+=1
 
+
+
+#hardswareurl = "http://localhost:8085/data.json"
+
+#hardwarejson = requests.get(hardswareurl)
+#hardwarejson = hardwarejson.json()
+
+#print(hardwarejson)
+
+
+
+
+
+### https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric
+### je hebt een gratis API sleutel nodig, registreren op OpenWeatherMap-website
+### Vraag de gebruiker om een sta in te voeren (vb : Amsterdam)
+### Maak een get-verzoek naar de openweathermap API
+###  Haal de volgnede gegevens op en toon ze:
+### temp in C, Weerbeschrijving, vochtigheid%, windsnelheid (km/h)
+
+
+APIkey = "08c9fe4800ecffe9e0af86c9836f5c6c"
+cityinput = input("Voeg in het engels een stad in: \n")
+
+#weatherurl = "https://api.openweathermap.org/data/2.5/weather?q=" + str(cityinput) + "&appid=" + str(APIkey) + "&units=metric"
+weatherurl2 = "https://api.openweathermap.org/data/2.5/weather?q=" + cityinput + "&appid=" + APIkey + "&units=metric"
+
+print(weatherurl2)
+
+weather = requests.get(weatherurl2)
+weatherjson = weather.json()
+
+temp = weatherjson["main"]["temp"]
+weatherdis = weatherjson["weather"][0]["description"]
+humidity = weatherjson["main"]["humidity"]
+buffor = weatherjson["wind"]["speed"]
+
+print(temp)
+print(weatherdis)
+print(humidity)
+print(buffor)
 
 
 
